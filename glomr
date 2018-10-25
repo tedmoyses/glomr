@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/vendor/autoload.php';
+
+//use Symfony\Component\Console\Application;
+use Glomr\App\Application;
+use Glomr\App\Command\Build;
+use Glomr\App\Command\Watch;
+use Glomr\App\Command\Init;
+
+$app = new Application();
+$app->add(new Build);
+$app->add(new Watch);
+$app->add(new Init);
+$app -> run();

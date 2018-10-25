@@ -1,0 +1,39 @@
+.navbar{
+  display: flex;
+}
+
+nav {
+  display: flex;
+  margin-left: auto;
+}
+
+nav a {
+  padding-right: 8px;
+}
+
+#menu-icon {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar,
+  nav {
+    flex-direction: column;
+    margin-left: 0px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  nav.show {
+    display: flex;
+  }
+
+  #menu-icon {
+    align-self: flex-end;
+    display: initial;
+    position: absolute;
+    cursor: pointer;
+  }
+}

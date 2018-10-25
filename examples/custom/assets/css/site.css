@@ -1,0 +1,79 @@
+
+html {
+  font-size: 16px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {
+  margin-bottom: 5em;
+}
+
+a {
+  text-decoration: none;
+  font-weight:bold;
+  color: gray;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: dimgray;
+}
+
+.navbar a.active {
+  color: dimgray;
+  text-decoration: underline;
+}
+
+.container {
+  margin: 0px auto;
+  width: 50Rem;
+}
+
+header {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  margin: 8rem 0px;
+}
+
+header img, header svg {
+  height:3.2rem;
+  transition-duration: 0.5s;
+}
+
+path {
+  fill: black !important;
+  color: black;
+}
+
+header img:hover, header svg:hover {
+  transform: scale(1.2);
+  transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
+}
+
+@media only screen and (max-width:768px) {
+  .container {
+    width: 100%;
+  }
+  header {
+    margin: 5rem 0px;
+  }
+}
+
+.history {
+  border-left: 2px dotted black;
+}
+
+.history h3 {
+  border-bottom: 2px dotted black;
+  display: inline-block;
+  padding-left: 0.5em;
+  border-radius: 0px 15px
+}
+
+.history p {
+  padding-left: 0.5em;
+}
+
+.blog-entry .blog-date {
+  float:right;
+}

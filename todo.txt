@@ -1,0 +1,12 @@
+*add init command with check y/n (warning it will delete) and single/multipage examples
+*add example/s for init to init with
+*Create readme
+create github pages documentation
+*create gitignore for src build configure
+*strip out the crap we dont use in base command
+*Work out how to get the glomr script into vendor/bin - actually into
+*sort compression option
+*prod vs dev for file paths?
+All the paths need much better management and initialisation
+Refactor required for handling paths, files and More
+Move all other file and directory handling methods from commands and builders to Build context and include in the Refactor

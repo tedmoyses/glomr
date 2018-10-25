@@ -1,0 +1,15 @@
+{
+    "name": "tedmoyses/glomr",
+    "description": "Cli application for Glomr static site builder",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "tedmoyses/glomr-lib": "^1.0",
+        "symfony/console": "^4.1"
+    },
+    "autoload":{
+        "psr-4": {"Glomr\\App\\": "App"}
+    },
+    "bin-dir": "./",
+    "bin": ["glomr"]
+}
