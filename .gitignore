@@ -2,4 +2,4 @@ vendor/
 config.json
 src/
 build/
-.cache/
+cache/
