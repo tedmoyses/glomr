@@ -10,6 +10,8 @@
     "autoload":{
         "psr-4": {"Glomr\\App\\": "App"}
     },
-    "bin-dir": "./",
+    "config": {
+        "bin-dir": "./",
+    },
     "bin": ["glomr"]
 }
