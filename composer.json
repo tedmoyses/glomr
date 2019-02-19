@@ -11,7 +11,7 @@
         "psr-4": {"Glomr\\App\\": "App"}
     },
     "config": {
-        "bin-dir": "./",
+        "bin-dir": "./"
     },
     "bin": ["glomr"]
 }

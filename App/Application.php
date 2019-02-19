@@ -15,9 +15,9 @@ use Symfony\Component\Console\Input\InputOption;
 class Application extends App {
 
   /**
-   * OVerdide the Symfony console application method to add a new default application
+   * Overdide the Symfony console application method to add a new default application
    * option of -d debug
-   * @return Array Holds all global optoins for application
+   * @return Array Holds all global options for application
    */
   public function getDefaultInputDefinition () {
     $inputOptions = parent::getDefaultInputDefinition();
@@ -38,13 +38,16 @@ class Application extends App {
    * @return int                  returns parent class value for exit code
    */
   public function doRun(InputInterface $input, OutputInterface $output) {
-    if (true === $input->hasParameterOption(array('--debug', '-d'), true)) {
+    if (true === $input->hasParameterOption(['--debug', '-d'], false, true)) {
       Logr::setDebug(true);
     }
 
+//Logr::setDebug(false);
+
     // check for a config file - make the default if not
-    if(!file_exists($input->getParameterOption(['--config', 'ct'], true))){
-      file_put_contents('config.json', '{
+    $configPath = $input->getParameterOption('--config', 'config.json', true);
+    if(!file_exists($configPath)){
+      file_put_contents($configPath, '{
 	"paths": {
 		"source": ".\/src",
 		"build": ".\/build",
@@ -56,10 +59,9 @@ class Application extends App {
 		"port": 8080,
 		"script": ""
 	},
-  "interval": 500
-}');
+	"interval": 500
+      }');
     }
-
     return parent::doRun($input, $output);
   }
 

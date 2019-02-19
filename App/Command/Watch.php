@@ -26,11 +26,7 @@ class Watch extends BaseCommand {
 
   public function execute(InputInterface $input, OutputInterface $output){
     $this->initialiseBuildContext($input);
-
     $interval = $input->getOption('interval');
-    if($input->getOption('poll') === 0 && defined('IN_MODIFY')) $watcher = new InotifyEventsWatcher($this->buildContext, $interval);
-    else $watcher = new PollWatcher($this->buildContext, $interval);
-
     $config = $this->getConfig($input->getOption('config'));
 
     if($input->getOption('serv') == 1){
@@ -42,10 +38,7 @@ class Watch extends BaseCommand {
       );
     }
 
-    $this->buildService->watch($config['interval']);
-
-    /*while($watcher->watch()){
-      $this->buildService->build();
-    }*/
+    $usePoller = $input->getOption('poll') === 0 && defined('IN_MODIFY') ? false : true; 
+    $this->buildService->watch($interval, $usePoller);
   }
 }
