@@ -25,6 +25,7 @@ class Application extends App {
     $inputOptions->addOption(new InputOption('--config', '-c', InputOption::VALUE_OPTIONAL, 'Set config filepath', 'config.json'));
     $inputOptions->addOption(new InputOption('--context', '-t', InputOption::VALUE_OPTIONAL, 'Set context for source templates', 'templates'));
     $inputOptions->addOption(new InputOption('--compression', '', InputOption::VALUE_OPTIONAL, 'Set level of asset compression \'low\', \'high\' or \'\'', ''));
+    $inputOptions->addOption(new InputOption('--nocolour', '-nc', InputOption::VALUE_NONE, 'Disable colourised output'));
     $inputOptions->addOption(new InputOption('--environment', '-e', InputOption::VALUE_OPTIONAL, 'Set environment to dev or production - controls how assets get produced', 'dev'));
     return $inputOptions;
   }
@@ -41,8 +42,10 @@ class Application extends App {
     if (true === $input->hasParameterOption(['--debug', '-d'], false, true)) {
       Logr::setDebug(true);
     }
+    if (true === $input->hasParameterOption(['--nocolour', '-nc'], false, true)) {
+      Logr::setColour(false);
+    }
 
-//Logr::setDebug(false);
 
     // check for a config file - make the default if not
     $configPath = $input->getParameterOption('--config', 'config.json', true);
