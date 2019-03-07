@@ -1563,16 +1563,16 @@
         },
         {
             "name": "tedmoyses/glomr-lib",
-            "version": "1.0.15",
+            "version": "1.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tedmoyses/glomr-lib.git",
-                "reference": "a16cf084b85810855f0f7884f613031bb47562c5"
+                "reference": "1b146a583f8a19fe69a330a80e593b0afe224b36"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tedmoyses/glomr-lib/zipball/a16cf084b85810855f0f7884f613031bb47562c5",
-                "reference": "a16cf084b85810855f0f7884f613031bb47562c5",
+                "url": "https://api.github.com/repos/tedmoyses/glomr-lib/zipball/1b146a583f8a19fe69a330a80e593b0afe224b36",
+                "reference": "1b146a583f8a19fe69a330a80e593b0afe224b36",
                 "shasum": ""
             },
             "require": {
@@ -1608,7 +1608,7 @@
                 }
             ],
             "description": "The library implemenation of Glomr the static stite builder",
-            "time": "2019-03-07T02:06:00+00:00"
+            "time": "2019-03-07T02:23:24+00:00"
         }
     ],
     "packages-dev": [],
