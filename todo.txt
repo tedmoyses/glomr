@@ -12,5 +12,6 @@ Refactor required for handling paths, files and More
 Move all other file and directory handling methods from commands and builders to Build context and include in the Refactor
 
 enable build vars to be passed from config
+ Watch needs vars to pass to build!
 
 enable static file builder to build files/paths from config

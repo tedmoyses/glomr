@@ -38,7 +38,13 @@ class Watch extends BaseCommand {
       );
     }
 
-    $usePoller = $input->getOption('poll') === 0 && defined('IN_MODIFY') ? false : true; 
-    $this->buildService->watch($interval, $usePoller);
+		$usePoller = $input->getOption('poll') === 0 && defined('IN_MODIFY') ? false : true;
+		if(array_key_exists('vars', $config)){
+			$vars = $config['vars'];
+		} else {
+			$vars = [];
+		}
+  
+    $this->buildService->watch($interval, $usePoller, $vars);
   }
 }
